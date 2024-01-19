@@ -1,0 +1,78 @@
+<html>
+<html lang="en-us">
+<head>
+	<title>PRE Calculator</title>
+
+</head>
+
+<body>
+
+                                <h1>PRE Calculator (extended model free version)</h1>
+
+<p>Reference (please quote when using this program):
+<p> Anthis, N.J. &amp; Clore, G.M. (2015) Visualizing transient dark states by NMR spectroscopy. <em>Q. Rev. Biophys. 48</em>, 35-116. <em><a href="https://www.pubmed.ncbi.nlm.nih.gov/25710841">Pubmed</a></em> <em><a href="./pdf/471.pdf">PDF</a></em></p>
+
+
+<hr>
+
+<p>Input your parameters to calculate the longitudinal and transverse paramagnetic relaxation enhancement (PRE) rates for a molecule:
+
+<form action="/cgi-bin/pre-calc_extMF.cgi" method="GET">
+<p>
+B<sub>0</sub> field (MHz):
+<input type="text" name="B_MHZ" value="600">
+</p>
+<p>
+Distance between nucleus and paramagnetic center (&Aring;):
+<input type="text" name="distance" value="10">
+</p>
+<p>
+Electron spin number:
+<input type="text" name="SE" value="0.5">
+</p>
+<p>
+Rotational correlation time (ns):
+<input type="text" name="tauR" value="10">
+</p>
+<p>
+Electron relaxation time (ns):
+<input type="text" name="tauE" value="1000">
+</p>
+<p>
+Fast correlation time (ns):
+<input type="text" name="tauF" value="0.05">
+</p>
+<p>
+Slow correlation time (ns):
+<input type="text" name="tauS" value="3.0">
+</p>
+<p>
+Overall order parameter (S<sup>2</sup>, 0 - 1):
+<input type="text" name="S2" value="1">
+</p>
+<p>
+Fast order parameter (S<sub>F</sub><sup>2</sup>, 0 - 1):
+<input type="text" name="SF2" value="1">
+</p>
+<p>
+Nucleus type (1H, 13C, or 15N):
+<br><input type="radio" name="nucleus_type" value="1H" checked>1H
+<br><input type="radio" name="nucleus_type" value="13C">13C
+<br><input type="radio" name="nucleus_type" value="15N">15N
+</p>
+<p>
+<input type="submit" value="submit">
+<input type="reset" value="reset">
+</p>
+</form>
+
+<hr>
+
+<h3>All PRE calculators:</h3>
+<ul><li><a href="./precalc.html">simple version</a><br>
+<li><a href="./precalc-mf.html">model free version</a><br>
+<li><a href="./precalc-extmf.html">extended model free version</a><br>
+</ul>
+
+</body>
+</html>

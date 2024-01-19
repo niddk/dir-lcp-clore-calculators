@@ -1,0 +1,26 @@
+<html lang="en-us">
+<head>
+	<title>Protein A205 Calculator</title>
+</head>
+
+<body>
+
+                                <h1>Protein Calculator</h1>
+<p>Reference (please quote when using this program):
+<p>Anthis, N.J. & Clore, G.M. (2013) Sequence-specific determination of protein and peptide concentrations by
+        absorbance at 205 nm, <em>Protein Science, 22, </em>851-858. <a href="https://www.ncbi.nlm.nih.gov/pubmed/23526461"><em>Pubmed</em></a> <em><a href="./pdf/453.pdf">PDF </a></em>
+<p>Enter your amino acid sequence (in single letters) in the box below. It can be upper- or lower-case and in any format (the script will ignore any spaces, numbers, symbols, etc.), but any other text will be interpreted as amino acids. Input is limited to 5,000 characters in total.
+
+<dl><dd>
+
+<form action="/cgi-bin/AbsCalc.cgi" method="POST">
+<textarea name="sequence" cols=60 rows=5 maxlength=5000></textarea>
+<dl><dd>
+<input type="submit" value="submit">
+<input type="reset" value="reset">
+</form>
+
+				</dl>
+
+</body>
+</html>

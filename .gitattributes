@@ -1,0 +1,8 @@
+* text=auto
+
+# Ensure code has Linux-friendly line endings
+*.cgi text eol=lf
+*.html text eol=lf
+
+# Ensure PDFs are always treated as binary
+*.pdf binary
