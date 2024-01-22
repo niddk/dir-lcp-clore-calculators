@@ -35,12 +35,22 @@ This repository contains web content (HTML and PDF) as well as CGI applications,
 
 ## Setup
 
+These files assume the following web server structure:
+
+- `/var/www/cgi-bin` - Directory configured for CGI applications
+- `/var/www/logs` - Directory for logging usage of the calculators (grant write access to all or to the Apache user)
+- `/var/www/html` - HTML web root for the website
+
+If your web server is configured differently, you may need to alter the setup steps and/or CGI scripts accordingly.
+
 1. Install and configure [Apache server][apache]
 2. Enable the Apache CGI module
-3. Install Python
-4. Add the Clore CGI scripts to the `cgi-bin` directory
-5. (If on Unix/Linux) Mark the `.cgi` scripts as executable (_e.g._, `chmod +x *.cgi`)
-6. Add the contents of the `html` directory to the the web root (_e.g._, `/var/www/html`)
+3. Install Python 3
+4. Add the Clore CGI scripts (found in the `cgi-bin` directory) to the `cgi-bin` directory on the server
+5. Ensure a `logs` directory exists as a sibling to the `cgi-bin` directory (or edit the `.cgi` scripts accordingly)
+   - The account Apache is using to run (or, alternatively, all users) should have write access to the `logs` directory
+6. (If on Unix/Linux) Mark the `.cgi` scripts as executable (_e.g._, `chmod +x *.cgi`)
+7. Add the contents of the `html` directory to the the web root (_e.g._, `/var/www/html`)
 
 ## Contact Information and Resources
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import cgi, cgitb
 import sys, re
@@ -6,8 +6,8 @@ import math
 
 form = cgi.FieldStorage()
 
-print "Content-type: text/plain"
-print
+print("Content-type: text/plain")
+print()
 
 ###############################################################################
 # User Input
@@ -18,7 +18,7 @@ try:
  B_MHZ = float(form.getvalue('B_MHZ'))
  B_MHZs = str(form.getvalue('B_MHZ'))
 except ValueError:
- print "ERROR: Please enter a single value for the B0 field strength."
+ print("ERROR: Please enter a single value for the B0 field strength.")
  sys.exit()
 
 try:
@@ -26,7 +26,7 @@ try:
  S2 = float(form.getvalue('S2'))
  S2s = str(form.getvalue('S2'))
 except ValueError:
- print "ERROR: Please enter a single value for the overall order parameter."
+ print("ERROR: Please enter a single value for the overall order parameter.")
  sys.exit()
 
 try:
@@ -34,7 +34,7 @@ try:
  SF2 = float(form.getvalue('SF2'))
  SF2s = str(form.getvalue('SF2'))
 except ValueError:
- print "ERROR: Please enter a single value for the fast order parameter."
+ print("ERROR: Please enter a single value for the fast order parameter.")
  sys.exit()
 
 try:
@@ -42,7 +42,7 @@ try:
  tauR = float(form.getvalue('tauR'))
  tauRs = str(form.getvalue('tauR'))
 except ValueError:
- print "ERROR: Please enter a single value for the overall rotational correlation time."
+ print("ERROR: Please enter a single value for the overall rotational correlation time.")
  sys.exit()
 
 try:
@@ -50,7 +50,7 @@ try:
  tauE = float(form.getvalue('tauE'))
  tauEs = str(form.getvalue('tauE'))
 except ValueError:
- print "ERROR: Please enter a single value for the correlation time."
+ print("ERROR: Please enter a single value for the correlation time.")
  sys.exit()
 
 try:
@@ -58,7 +58,7 @@ try:
  tauF = float(form.getvalue('tauF'))
  tauFs = str(form.getvalue('tauF'))
 except ValueError:
- print "ERROR: Please enter a single value for the total fast correlation time."
+ print("ERROR: Please enter a single value for the total fast correlation time.")
  sys.exit()
 
 try:
@@ -66,7 +66,7 @@ try:
  tauS = float(form.getvalue('tauS'))
  tauSs = str(form.getvalue('tauS'))
 except ValueError:
- print "ERROR: Please enter a single value for the total slow correlation time."
+ print("ERROR: Please enter a single value for the total slow correlation time.")
  sys.exit()
 
 try:
@@ -74,7 +74,7 @@ try:
  distance = float(form.getvalue('distance'))
  distances = str(form.getvalue('distance'))
 except ValueError:
- print "ERROR: Please enter a single value for the distance."
+ print("ERROR: Please enter a single value for the distance.")
  sys.exit()
 
 try:
@@ -82,7 +82,7 @@ try:
  SE = float(form.getvalue('SE'))
  SEs = str(form.getvalue('SE'))
 except ValueError:
- print "ERROR: Please enter a single value for the electron spin number."
+ print("ERROR: Please enter a single value for the electron spin number.")
  sys.exit()
 
 try:
@@ -91,7 +91,7 @@ try:
  nucleus_type = str(form.getvalue('nucleus_type'))
  nucleus_types = str(form.getvalue('nucleus_type'))
 except ValueError:
- print "ERROR: Please enter a single value for the nucleus type."
+ print("ERROR: Please enter a single value for the nucleus type.")
  sys.exit()
 
 ###############################################################################
@@ -230,29 +230,29 @@ SS2 = S2 / SF2n
 # Output
 ###############################################################################i
 
-print "Script to calculate PRE rates"
-print "(extended model free version)"
-print
-print "Reference:"
-print "Anthis N.J. & Clore G.M. (2014) Visualizing dark states by NMR spectroscopy,"
-print "Quarterly Reviews of Biophysics, in press."
-print
-print "Input:"
-print "field\t%s\tMHz" % B_MHZ
-print "dist.\t%s\tA" % distance
-print "e_spin\t%s\t" % SE
-print "tauC\t%.3f\tns" % tauC
-print "tauR\t%.3f\tns" % tauR
-print "tauE\t%.3f\tns" % tauE
-print "tauF'\t%.3f\tns" % tauFprime
-print "tauF\t%.3f\tns" % tauF
-print "tauS'\t%.3f\tns" % tauSprime
-print "tauS\t%.3f\tns" % tauS
-print "S2\t%.3f\t" % S2
-print "SF2\t%.3f\t" % SF2
-print "SS2\t%.3f\t" % SS2
-print "nucleus\t%s\t" % nucleus_type
-print
-print "Results:"
-print "PRE_R1\t%13.5e\ts-1" % (PRE_R1)
-print "PRE_R2\t%13.5e\ts-1" % (PRE_R2)
+print("Script to calculate PRE rates")
+print("(extended model free version)")
+print()
+print("Reference:")
+print("Anthis N.J. & Clore G.M. (2014) Visualizing dark states by NMR spectroscopy,")
+print("Quarterly Reviews of Biophysics, in press.")
+print()
+print("Input:")
+print("field\t%s\tMHz" % B_MHZ)
+print("dist.\t%s\tA" % distance)
+print("e_spin\t%s\t" % SE)
+print("tauC\t%.3f\tns" % tauC)
+print("tauR\t%.3f\tns" % tauR)
+print("tauE\t%.3f\tns" % tauE)
+print("tauF'\t%.3f\tns" % tauFprime)
+print("tauF\t%.3f\tns" % tauF)
+print("tauS'\t%.3f\tns" % tauSprime)
+print("tauS\t%.3f\tns" % tauS)
+print("S2\t%.3f\t" % S2)
+print("SF2\t%.3f\t" % SF2)
+print("SS2\t%.3f\t" % SS2)
+print("nucleus\t%s\t" % nucleus_type)
+print()
+print("Results:")
+print("PRE_R1\t%13.5e\ts-1" % (PRE_R1))
+print("PRE_R2\t%13.5e\ts-1" % (PRE_R2))

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import cgi, cgitb
 import sys, re
@@ -37,7 +37,7 @@ logfile.write('\t')
 logfile.write(seq)
 logfile.write('\n')
 logfile.close()
- 
+
 ###############################################################################
 # Constants
 ###############################################################################
@@ -253,74 +253,74 @@ Abs205CyCy = Abs205 + CyCy*CyCy205
 # Output
 ###############################################################################
 
-print "Content-type: text/plain"
-print
-print "This script calculates molar absorptivities (extinction coefficients) at 205"
-print "nm and 280 nm from an amino acid sequence. It also calculates the molecular"
-print "weight for various universal isotopic labeling schemes."
-print
-print "Reference:"
-print "Anthis N.J., Clore G.M. (2013) Sequence-specific determination of protein"
-print "and peptide concentrations by absorbance at 205 nm, Protein Science 22, 851-8, doi:10.1002/pro.2253"
-print
-print "Amino acid sequence:"  
-print seq 
-print
-print "Number of residues:"
-print rescount
-print
-print "Molecular weight (in H2O):"
-print "natural abundance  %.2f" % (MWul)
-print "2H                 %.2f" % (MW2h)
-print "13C                %.2f" % (MW13c)
-print "15N                %.2f" % (MW15n)
-print "2H,13C             %.2f" % (MW2h13c)
-print "2H,15N             %.2f" % (MW2h15n)
-print "13C,15N            %.2f" % (MW13c15n)
-print "2H,13C,15N         %.2f" % (MW2h13c15n)
-print
-print "Amino acid composition:"
-print "A = %s" % (A)
-print "C = %s" % (Cy)
-print "D = %s" % (D)
-print "E = %s" % (E)
-print "F = %s" % (F)
-print "G = %s" % (G)
-print "H = %s" % (H)
-print "I = %s" % (I)
-print "K = %s" % (K)
-print "L = %s" % (L)
-print "M = %s" % (M)
-print "N = %s" % (N)
-print "P = %s" % (P)
-print "Q = %s" % (Q)
-print "R = %s" % (R)
-print "S = %s" % (S)
-print "T = %s" % (T)
-print "V = %s" % (V)
-print "W = %s" % (W)
-print "Y = %s" % (Y)
-print
-print "Atomic composition:"
-print "Carbon       (C)     %i" % (Ccount)
-print "Hydrogen     (H)     %i" % (Htocount)
-print "   non-exchangeable     %i" % (Hnocount)
-print "   exchangeable         %i" % (Hexcount)
-print "Nitrogen     (N)     %i" % (Ncount)
-print "Oxygen       (O)     %i" % (Ocount)
-print "Sulfur       (S)     %i" % (Scount)
-print
-print "Molar absorptivity (extinction coefficient) at 280 nm ="
+print("Content-type: text/plain")
+print()
+print("This script calculates molar absorptivities (extinction coefficients) at 205")
+print("nm and 280 nm from an amino acid sequence. It also calculates the molecular")
+print("weight for various universal isotopic labeling schemes.")
+print()
+print("Reference:")
+print("Anthis N.J., Clore G.M. (2013) Sequence-specific determination of protein")
+print("and peptide concentrations by absorbance at 205 nm, Protein Science 22, 851-8, doi:10.1002/pro.2253")
+print()
+print("Amino acid sequence:")
+print(seq)
+print()
+print("Number of residues:")
+print(rescount)
+print()
+print("Molecular weight (in H2O):")
+print("natural abundance  %.2f" % (MWul))
+print("2H                 %.2f" % (MW2h))
+print("13C                %.2f" % (MW13c))
+print("15N                %.2f" % (MW15n))
+print("2H,13C             %.2f" % (MW2h13c))
+print("2H,15N             %.2f" % (MW2h15n))
+print("13C,15N            %.2f" % (MW13c15n))
+print("2H,13C,15N         %.2f" % (MW2h13c15n))
+print()
+print("Amino acid composition:")
+print("A = %s" % (A))
+print("C = %s" % (Cy))
+print("D = %s" % (D))
+print("E = %s" % (E))
+print("F = %s" % (F))
+print("G = %s" % (G))
+print("H = %s" % (H))
+print("I = %s" % (I))
+print("K = %s" % (K))
+print("L = %s" % (L))
+print("M = %s" % (M))
+print("N = %s" % (N))
+print("P = %s" % (P))
+print("Q = %s" % (Q))
+print("R = %s" % (R))
+print("S = %s" % (S))
+print("T = %s" % (T))
+print("V = %s" % (V))
+print("W = %s" % (W))
+print("Y = %s" % (Y))
+print()
+print("Atomic composition:")
+print("Carbon       (C)     %i" % (Ccount))
+print("Hydrogen     (H)     %i" % (Htocount))
+print("   non-exchangeable     %i" % (Hnocount))
+print("   exchangeable         %i" % (Hexcount))
+print("Nitrogen     (N)     %i" % (Ncount))
+print("Oxygen       (O)     %i" % (Ocount))
+print("Sulfur       (S)     %i" % (Scount))
+print()
+print("Molar absorptivity (extinction coefficient) at 280 nm =")
 if CyCy >= 1:
- print "%i M-1 cm-1 (if no disulfide bonds are present)" % (Abs280)
- print "%i M-1 cm-1 (if all cysteines are in disulfide bonds)" % (Abs280CyCy)
+ print("%i M-1 cm-1 (if no disulfide bonds are present)" % (Abs280))
+ print("%i M-1 cm-1 (if all cysteines are in disulfide bonds)" % (Abs280CyCy))
 else:
- print "%i M-1 cm-1" % (Abs280)
-print
-print "Molar absorptivity (extinction coefficient) at 205 nm ="
+ print("%i M-1 cm-1" % (Abs280))
+print()
+print("Molar absorptivity (extinction coefficient) at 205 nm =")
 if CyCy >= 1:
- print "%i M-1 cm-1 (if no disulfide bonds are present)" % (Abs205)
- print "%i M-1 cm-1 (if all cysteines are in disulfide bonds)" % (Abs205CyCy)
+ print("%i M-1 cm-1 (if no disulfide bonds are present)" % (Abs205))
+ print("%i M-1 cm-1 (if all cysteines are in disulfide bonds)" % (Abs205CyCy))
 else:
- print "%i M-1 cm-1" % (Abs205)
-print
+ print("%i M-1 cm-1" % (Abs205))
+print()

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import cgi, cgitb
 import sys, re
@@ -6,8 +6,8 @@ import math
 
 form = cgi.FieldStorage()
 
-print "Content-type: text/plain"
-print
+print("Content-type: text/plain")
+print()
 
 ###############################################################################
 # User Input
@@ -18,7 +18,7 @@ try:
  B_MHZ = float(form.getvalue('B_MHZ'))
  B_MHZs = str(form.getvalue('B_MHZ'))
 except ValueError:
- print "ERROR: Please enter a single value for the B0 field strength."
+ print("ERROR: Please enter a single value for the B0 field strength.")
  sys.exit()
 
 try:
@@ -26,7 +26,7 @@ try:
  S2 = float(form.getvalue('S2'))
  S2s = str(form.getvalue('S2'))
 except ValueError:
- print "ERROR: Please enter a single value for the order parameter."
+ print("ERROR: Please enter a single value for the order parameter.")
  sys.exit()
 
 try:
@@ -34,7 +34,7 @@ try:
  tauR = float(form.getvalue('tauR'))
  tauRs = str(form.getvalue('tauR'))
 except ValueError:
- print "ERROR: Please enter a single value for the correlation time."
+ print("ERROR: Please enter a single value for the correlation time.")
  sys.exit()
 
 try:
@@ -42,7 +42,7 @@ try:
  tauE = float(form.getvalue('tauE'))
  tauEs = str(form.getvalue('tauE'))
 except ValueError:
- print "ERROR: Please enter a single value for the correlation time."
+ print("ERROR: Please enter a single value for the correlation time.")
  sys.exit()
 
 try:
@@ -50,7 +50,7 @@ try:
  distance = float(form.getvalue('distance'))
  distances = str(form.getvalue('distance'))
 except ValueError:
- print "ERROR: Please enter a single value for the distance."
+ print("ERROR: Please enter a single value for the distance.")
  sys.exit()
 
 try:
@@ -58,7 +58,7 @@ try:
  SE = float(form.getvalue('SE'))
  SEs = str(form.getvalue('SE'))
 except ValueError:
- print "ERROR: Please enter a single value for the electron spin number."
+ print("ERROR: Please enter a single value for the electron spin number.")
  sys.exit()
 
 try:
@@ -67,7 +67,7 @@ try:
  nucleus_type = str(form.getvalue('nucleus_type'))
  nucleus_types = str(form.getvalue('nucleus_type'))
 except ValueError:
- print "ERROR: Please enter a single value for the nucleus type."
+ print("ERROR: Please enter a single value for the nucleus type.")
  sys.exit()
 
 ###############################################################################
@@ -187,24 +187,24 @@ tauC = tCp * 1.0e9
 # Output
 ###############################################################################i
 
-print "Script to calculate PRE rates"
-print "(simple version)"
-print
-print "Reference:"
-print "Anthis N.J. & Clore G.M. (2014) Visualizing dark states by NMR spectroscopy,"
-print "Quarterly Reviews of Biophysics, in press."
-print
-print "Input:"
-print "field\t%s\tMHz" % B_MHZ
-print "dist.\t%s\tA" % distance
-print "e_spin\t%s\t" % SE
-print "tauC\t%.3f\tns" % tauC
-print "tauR\t%.3f\tns" % tauR
-print "tauE\t%.3f\tns" % tauE
-print "S2\t%s\t" % S2
-print "nucleus\t%s\t" % nucleus_type
-print
-print "Results:"
-print "PRE_R1\t%13.5e\ts-1" % (PRE_R1)
-print "PRE_R2\t%13.5e\ts-1" % (PRE_R2)
+print("Script to calculate PRE rates")
+print("(simple version)")
+print()
+print("Reference:")
+print("Anthis N.J. & Clore G.M. (2014) Visualizing dark states by NMR spectroscopy,")
+print("Quarterly Reviews of Biophysics, in press.")
+print()
+print("Input:")
+print("field\t%s\tMHz" % B_MHZ)
+print("dist.\t%s\tA" % distance)
+print("e_spin\t%s\t" % SE)
+print("tauC\t%.3f\tns" % tauC)
+print("tauR\t%.3f\tns" % tauR)
+print("tauE\t%.3f\tns" % tauE)
+print("S2\t%s\t" % S2)
+print("nucleus\t%s\t" % nucleus_type)
+print()
+print("Results:")
+print("PRE_R1\t%13.5e\ts-1" % (PRE_R1))
+print("PRE_R2\t%13.5e\ts-1" % (PRE_R2))
 
